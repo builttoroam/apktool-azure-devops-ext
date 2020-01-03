@@ -12,7 +12,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 8
+        "Patch": 11
     },
     "demands": [
         "msbuild"
@@ -43,9 +43,9 @@
             "name": "apkfile",
             "type": "filePath",
             "label": "Apk",
-            "defaultValue": "**\\*.apk",
+            "defaultValue": "[path]\\[filename].apk",
             "required": true,
-            "helpMarkDown": "Relative path from repo root to the apk to extract or package.  Wildcards can be used for extracting apk files.  For example, `**\\*.apk` for all apk files in all sub folders."
+            "helpMarkDown": "Relative path from repo root to the apk to extract or package."
         },
         {
             "name": "outputFolder",

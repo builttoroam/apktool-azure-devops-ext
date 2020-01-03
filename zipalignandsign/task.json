@@ -1,0 +1,72 @@
+{
+    "id": "5e17d48f-44df-43fb-9c9c-c66614b6c605",
+    "name": "ZipAlignAndSign",
+    "friendlyName": "Apk ZipAlign and Sign",
+    "description": "ZipAlign and Signing tool",
+    "helpMarkDown": "[More Information](https://builttoroam.com)",
+    "category": "Build",
+    "visibility": [
+        "Build"
+    ],
+    "author": "Built to Roam",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "demands": [
+        "msbuild"
+    ],
+    "minimumAgentVersion": "1.99.0",
+    "inputs": [
+        {
+            "name": "apkfile",
+            "type": "filePath",
+            "label": "Apk",
+            "defaultValue": "[path]\\[filename].apk",
+            "required": true,
+            "helpMarkDown": "Relative path to the apk to zipalign and sign."
+        },
+        {
+            "name": "keyStorePath",
+            "type": "filePath",
+            "label": "KeyStorePath",
+            "defaultValue": "[path]\\[filename]",
+            "required": true,
+            "helpMarkDown": "Relative path to the keystore."
+        },
+        {
+            "name": "keyStorePass",
+            "type": "string",
+            "label": "KeyStorePass",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "The password for the keystore."
+        },
+        {
+            "name": "keyStoreAlias",
+            "type": "string",
+            "label": "KeyStoreAlias",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "The alias for the keystore."
+        },
+        {
+            "name": "outputApkfile",
+            "type": "filePath",
+            "label": "OutputApk",
+            "defaultValue": "[path]\\[filename].apk",
+            "required": true,
+            "helpMarkDown": "The zipalign and signed APK."
+        }
+    ],
+    "instanceNameFormat": "ZipAlign and Sign",
+    "execution": {
+        "PowerShell3": {
+            "target": "MSBuild.ps1",
+            "platforms": [
+                "windows"
+            ]
+        }
+    }
+}

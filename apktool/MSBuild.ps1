@@ -19,7 +19,15 @@ try {
     Write-Verbose "script path = $scriptLocation"
     $apkToolPath = "$PSScriptRoot\apktool.bat"
     Write-Verbose "apktool path = $apkToolPath"
-    $apkToolArgs = "decode `"$apkfile`" "
+    $apkToolArgs = $apktoolAction
+
+    if("$apktoolAction".ToUpperInvariant() -eq 'DECODE'){
+        $apkToolArgs = "$apktoolAction `"$apkfile`" -o  `"$outputFolder`""
+    }
+    else
+    {
+        $apkToolArgs = "$apktoolAction `"$inputFolder`" -o `"$apkfile`" "
+    }
     Write-Verbose "apktool args = $apkToolArgs"
 
     Invoke-VstsTool -FileName $apkToolPath -Arguments $apkToolArgs

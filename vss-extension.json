@@ -1,11 +1,14 @@
 {
     "manifestVersion": 1,
     "id": "btr-apktool",
-    "version": "0.1.26",
+    "version": "0.1.34",
     "name": "ApkTool Build and Release Task",
     "scopes": [
         "vso.build",
         "vso.release"
+    ],
+    "galleryFlags": [
+        "Preview"
     ],
     "description": "This task wraps the ApkTool command line tool making it easy to invoke as part of a build/release pipeline.",
     "publisher": "BuiltToRoam",
@@ -57,6 +60,10 @@
         {
             "path": "apktool",
             "addressable": true
+        },
+        {
+            "path": "zipalignandsign",
+            "addressable": true
         }
     ],
     "categories": [
@@ -71,6 +78,16 @@
             ],
             "properties": {
                 "name": "ApkTool"
+            }
+        },
+        {
+            "id": "ZipAlignAndSign",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "ZipAlignAndSign"
             }
         }
     ]
