@@ -21,7 +21,7 @@
     "typescript": "2.9.2",
     "vss-web-extension-sdk": "5.134.0"
   },
-  "name": "vsts-extension-ts-seed-simple",
+  "name": "btr-apktool",
   "private": true,
   "version": "0.7.0"
 }

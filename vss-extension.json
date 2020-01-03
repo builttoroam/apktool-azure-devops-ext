@@ -1,11 +1,14 @@
 {
     "manifestVersion": 1,
-    "id": "vsts-extension-ts-seed-simple",
-    "version": "0.1.1",
-    "name": "vsts-extension-ts-seed-simple",
-    "scopes": [ "vso.work", "vso.work_write" ],
-    "description": "Describe your extension.",
-    "publisher": "your-publisher",
+    "id": "btr-apktool",
+    "version": "0.1.26",
+    "name": "ApkTool Build and Release Task",
+    "scopes": [
+        "vso.build",
+        "vso.release"
+    ],
+    "description": "This task wraps the ApkTool command line tool making it easy to invoke as part of a build/release pipeline.",
+    "publisher": "BuiltToRoam",
     "icons": {
         "default": "img/logo.png"
     },
@@ -15,7 +18,7 @@
         }
     ],
     "tags": [
-        "Sample"
+        "build, release, packaging, android, apk, apktool"
     ],
     "content": {
         "details": {
@@ -24,27 +27,27 @@
     },
     "links": {
         "home": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/builttoroam/apktool-azure-devops-ext"
         },
         "getstarted": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/builttoroam/apktool-azure-devops-ext"
         },
         "learn": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/builttoroam/apktool-azure-devops-ext"
         },
         "support": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/builttoroam/apktool-azure-devops-ext"
         },
         "repository": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/builttoroam/apktool-azure-devops-ext"
         },
         "issues": {
-            "uri": "https://bit.ly"
+            "uri": "https://github.com/builttoroam/apktool-azure-devops-ext"
         }
     },
     "branding": {
-        "color": "rgb(220, 235, 252)",
-        "theme": "light"
+        "color": "rgb(32, 41, 45)",
+        "theme": "dark"
     },
     "files": [
         {
@@ -52,28 +55,22 @@
             "addressable": true
         },
         {
-            "path": "build",
-            "addressable": true
-        },
-        {
-            "path": "index.html",
+            "path": "apktool",
             "addressable": true
         }
     ],
     "categories": [
-        "Integrate"
+        "Azure Pipelines"
     ],
     "contributions": [
         {
-            "id": "vsts-extension-ts-seed-simple-action",
-            "type": "ms.vss-web.action-provider",
-            "description": "",
+            "id": "ApkTool",
+            "type": "ms.vss-distributed-task.task",
             "targets": [
-                "ms.vss-work-web.work-item-context-menu"
+                "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "group": "contributed",
-                "uri": "index.html"
+                "name": "ApkTool"
             }
         }
     ]

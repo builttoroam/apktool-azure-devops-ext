@@ -1,3 +1,3 @@
-# vsts-extension-ts-seed-simple #
+# btr-apktool #
 
-Describe your extension here. This description will be shown in the marketplace. You can use *Markdown*.
+This tool allows for the execution of ApkTool during a build or release pipeline.
